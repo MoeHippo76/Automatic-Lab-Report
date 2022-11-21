@@ -1,0 +1,18 @@
+equations:
+  J_exp: "sqrt(y**2) + sin(y)**2 + h*c"
+  z: J_exp**2
+results: 
+- "result.csv"
+- "result2.csv"
+analysis:
+  a1:
+    calculate: J_exp
+    input table: "result.csv"
+    input columns: "1"
+    constants: 
+      h: 1.22
+      c: 3e2
+  a2:
+    calculate: z
+    input table: "J_exp.csv"
+    input columns: "0"
